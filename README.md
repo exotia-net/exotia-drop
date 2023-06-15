@@ -1,2 +1,2 @@
-# exotia-drops
-Spigot Plugin for Exotia.net block drops
+# exotia-drop
+Spigot Plugin for Exotia.net block drop
