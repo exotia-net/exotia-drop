@@ -1,0 +1,8 @@
+name: ExotiaDrop
+version: 1.0
+author: Exotia.net Team
+website: https://exotia.net/
+description: Spigot Plugin for Exotia.net block drop
+main: net.exotia.plugins.drop.DropPlugin
+api-version: 1.19
+softdepend: [ PlaceholderAPI, Oraxen ]
