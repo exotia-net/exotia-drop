@@ -18,10 +18,10 @@ public class Drop extends OkaeriConfig {
     private String displayName;
     private List<String> lore;
     private int amount;
-    private int chance;
+    private float chance;
 
-    public void dropPlayer(Player player, ConfigurationMessage configurationMessage) {
-        DropType.valueOf(dropType.toUpperCase()).dropPlayer(player, this, configurationMessage);
+    public void dropPlayer(Player player, ConfigurationMessage configurationMessage, float multiplier) {
+        DropType.valueOf(dropType.toUpperCase()).dropPlayer(player, this, configurationMessage, multiplier);
     }
 
     public int getDropAmount() {

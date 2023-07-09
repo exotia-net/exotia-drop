@@ -34,7 +34,7 @@ public final class DropPlugin extends JavaPlugin {
     private final ConfigurationFactory configurationFactory = new ConfigurationFactory(this.getDataFolder());
     private ConfigurationMessage configurationMessage;
     private ConfigurationGui configurationGui;
-    private ConfigurationDrop configurationRewards;
+    private ConfigurationDrop configurationDrop;
 
     @Override
     public void onEnable() {
@@ -59,11 +59,11 @@ public final class DropPlugin extends JavaPlugin {
     private void setupConfiguration() {
         configurationMessage = configurationFactory.produce(ConfigurationMessage.class, "messages.yml");
         configurationGui = configurationFactory.produce(ConfigurationGui.class, "guis.yml");
-        configurationRewards = configurationFactory.produce(ConfigurationDrop.class, "drops.yml");
+        configurationDrop = configurationFactory.produce(ConfigurationDrop.class, "drops.yml");
 
         injector.registerInjectable(configurationMessage);
         injector.registerInjectable(configurationGui);
-        injector.registerInjectable(configurationRewards);
+        injector.registerInjectable(configurationDrop);
     }
 
     private void setupUtils() {
@@ -92,6 +92,6 @@ public final class DropPlugin extends JavaPlugin {
     private void cleanUp() {
         configurationMessage.save();
         configurationGui.save();
-        configurationRewards.save();
+        configurationDrop.save();
     }
 }

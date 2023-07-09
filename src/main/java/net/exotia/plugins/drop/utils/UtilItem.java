@@ -21,7 +21,7 @@ public class UtilItem {
         return item;
     }
 
-    public static ItemStack getItem(Drop drop) {
-        return getItem(drop.getId(), drop.getItemType(), drop.getDisplayName(), drop.getLore(), drop.getDropAmount());
+    public static ItemStack getItem(Drop drop, float multiplier) {
+        return getItem(drop.getId(), drop.getItemType(), drop.getDisplayName(), drop.getLore(), (int) (drop.getDropAmount() * multiplier));
     }
 }
