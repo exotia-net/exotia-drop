@@ -16,9 +16,9 @@ public class ListenerBlock implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
-        if (!configurationDrop.getBlock().contains(event.getBlock().getType().name())) return;
-        event.getBlock().get
-        Drop drop = configurationDrop.getRandomDrop();
+        String dropType = configurationDrop.getDropType(event.getBlock().getType());
+        if (dropType == null) return;
+        Drop drop = configurationDrop.getDrop(dropType);
         if (drop.canDrop()) return;
         drop.dropPlayer(event.getPlayer(), configurationMessage, configurationDrop.getMultiplier());
     }

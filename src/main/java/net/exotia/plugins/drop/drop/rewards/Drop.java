@@ -25,7 +25,7 @@ public class Drop extends OkaeriConfig {
     }
 
     public int getDropAmount() {
-        return new Random().nextInt(getAmount()) + 1;
+        return new Random().nextInt(getAmount() + 1);
     }
 
     public boolean canDrop() {
