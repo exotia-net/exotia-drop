@@ -33,11 +33,12 @@ public class CommandKey {
         Player player = (Player) sender;
         PlayerInventory inventory = player.getInventory();
         ItemStack item = inventory.getItemInMainHand();
-        if ((!item.isSimilar(OraxenItems.getItemById("crate_key_fragment_media").build())) && item.getAmount() < 9)
+        if ((OraxenItems.getIdByItem(item).equals("crate_key_fragment_media")) && item.getAmount() < 9)
             return;
         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "crate key give " + player.getDisplayName() + " media 1");
-        if (item.getAmount() > 9) item.setAmount(item.getAmount() - 9);
-        inventory.setItem(inventory.getHeldItemSlot(), new ItemStack(Material.AIR));
+        if (item.getAmount() == 9) inventory.setItem(inventory.getHeldItemSlot(), new ItemStack(Material.AIR));
+        item.setAmount(item.getAmount() - 9);
+        inventory.setItem(inventory.getHeldItemSlot(), item);
     }
 
     @Execute(route = "memory")
@@ -45,10 +46,11 @@ public class CommandKey {
         Player player = (Player) sender;
         PlayerInventory inventory = player.getInventory();
         ItemStack item = inventory.getItemInMainHand();
-        if ((!item.isSimilar(OraxenItems.getItemById("crate_key_fragment_memory").build())) && item.getAmount() < 9)
+        if ((OraxenItems.getIdByItem(item).equals("crate_key_fragment_memory")) && item.getAmount() < 9)
             return;
         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "crate key give " + player.getDisplayName() + " memory 1");
-        if (item.getAmount() > 9) item.setAmount(item.getAmount() - 9);
-        inventory.setItem(inventory.getHeldItemSlot(), new ItemStack(Material.AIR));
+        if (item.getAmount() == 9) inventory.setItem(inventory.getHeldItemSlot(), new ItemStack(Material.AIR));
+        item.setAmount(item.getAmount() - 9);
+        inventory.setItem(inventory.getHeldItemSlot(), item);
     }
 }
