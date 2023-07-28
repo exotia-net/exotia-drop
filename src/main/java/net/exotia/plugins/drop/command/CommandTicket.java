@@ -29,7 +29,7 @@ public class CommandTicket {
         Player player = (Player) sender;
         PlayerInventory inventory = player.getInventory();
         ItemStack item = inventory.getItemInMainHand();
-        if (!item.isSimilar(OraxenItems.getItemById("ticket_the_nether").build())) return;
+        if (!item.isSimilar(OraxenItems.getItemById("ticket_the_end").build())) return;
         Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "rtp player " + player.getDisplayName() + " world_the_end");
         inventory.setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.AIR));
     }
