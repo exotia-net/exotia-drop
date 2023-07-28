@@ -20,7 +20,7 @@ public class CommandTicket {
         PlayerInventory inventory = player.getInventory();
         ItemStack item = inventory.getItemInMainHand();
         if (!item.isSimilar(OraxenItems.getItemById("ticket_the_nether").build())) return;
-        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "mv tp" + player.getDisplayName() + " world_nether");
+        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "rtp player " + player.getDisplayName() + " world_nether");
         inventory.setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.AIR));
     }
 
@@ -30,7 +30,7 @@ public class CommandTicket {
         PlayerInventory inventory = player.getInventory();
         ItemStack item = inventory.getItemInMainHand();
         if (!item.isSimilar(OraxenItems.getItemById("ticket_the_nether").build())) return;
-        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "mv tp" + player.getDisplayName() + " world_the_end");
+        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "rtp player " + player.getDisplayName() + " world_the_end");
         inventory.setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.AIR));
     }
 }
