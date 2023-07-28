@@ -6,8 +6,9 @@ import dev.rollczi.litecommands.bukkit.tools.BukkitPlayerArgument;
 import eu.okaeri.injector.Injector;
 import eu.okaeri.injector.OkaeriInjector;
 import lombok.Getter;
-import net.exotia.plugins.drop.command.CommandDrop;
+import net.exotia.plugins.drop.command.CommandKey;
 import net.exotia.plugins.drop.command.CommandReload;
+import net.exotia.plugins.drop.command.CommandTicket;
 import net.exotia.plugins.drop.configuration.ConfigurationDrop;
 import net.exotia.plugins.drop.configuration.ConfigurationFactory;
 import net.exotia.plugins.drop.configuration.ConfigurationGui;
@@ -76,7 +77,8 @@ public final class DropPlugin extends JavaPlugin {
                 .contextualBind(Player.class, new BukkitOnlyPlayerContextual<>(UtilMessage.getMessage(configurationMessage.getCommandsPlayer().getOnly())))
                 .commandInstance(
                         injector.createInstance(CommandReload.class),
-                        injector.createInstance(CommandDrop.class)
+                        injector.createInstance(CommandTicket.class),
+                        injector.createInstance(CommandKey.class)
                 )
                 .invalidUsageHandler(injector.createInstance(HandlerInvalid.class))
                 .permissionHandler(injector.createInstance(HandlerUnauthorized.class))
