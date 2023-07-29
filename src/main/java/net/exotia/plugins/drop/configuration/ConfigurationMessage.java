@@ -18,6 +18,12 @@ public class ConfigurationMessage extends OkaeriConfig {
     @Comment("Reload Command")
     private CommandsReload commandsReload = new CommandsReload();
 
+    @Comment("Key Command")
+    private CommandsKey commandsKey = new CommandsKey();
+
+    @Comment("Ticket Command")
+    private CommandsTicket commandsTicket = new CommandsTicket();
+
     @Comment("Block break Event")
     private EventsBreak eventsBreak = new EventsBreak();
 
@@ -44,6 +50,20 @@ public class ConfigurationMessage extends OkaeriConfig {
     public class CommandsReload extends OkaeriConfig {
         private String success = "鱂 Konfiguracja <gradient:#4fa943:#9ec52f><bold>przeładowana!</bold></gradient>";
         private String failed = "鱂 Wystąpił <gradient:#4fa943:#9ec52f><bold>błąd</bold></gradient> przy przeładowywaniu <gradient:#4fa943:#9ec52f><bold>konfiguracji!</bold></gradient> Stworzono nowe <gradient:#4fa943:#9ec52f><bold>pliki konfiguracyjne!</bold></gradient>";
+    }
+
+    @Getter
+    public class CommandsKey extends OkaeriConfig {
+        private String success = "鱂 Success Key";
+        private String notFound = "鱂 Serwer, na który próbujesz się przenieść <gradient:#4fa943:#9ec52f><bold>nie istnieje!</bold></gradient>";
+        private String invalid = "鱂 Serwer, na który próbujesz się przenieść jest <gradient:#4fa943:#9ec52f><bold>niedostępny!</bold></gradient>";
+    }
+
+    @Getter
+    public class CommandsTicket extends OkaeriConfig {
+        private String success = "鱂 Success Ticket";
+        private String notFound = "鱂 Serwer, na który próbujesz się przenieść <gradient:#4fa943:#9ec52f><bold>nie istnieje!</bold></gradient>";
+        private String invalid = "鱂 Serwer, na który próbujesz się przenieść jest <gradient:#4fa943:#9ec52f><bold>niedostępny!</bold></gradient>";
     }
 
     @Getter

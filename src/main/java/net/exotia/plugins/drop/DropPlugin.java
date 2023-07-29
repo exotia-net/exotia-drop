@@ -9,10 +9,7 @@ import lombok.Getter;
 import net.exotia.plugins.drop.command.CommandKey;
 import net.exotia.plugins.drop.command.CommandReload;
 import net.exotia.plugins.drop.command.CommandTicket;
-import net.exotia.plugins.drop.configuration.ConfigurationDrop;
-import net.exotia.plugins.drop.configuration.ConfigurationFactory;
-import net.exotia.plugins.drop.configuration.ConfigurationGui;
-import net.exotia.plugins.drop.configuration.ConfigurationMessage;
+import net.exotia.plugins.drop.configuration.*;
 import net.exotia.plugins.drop.drop.gui.GuiDrop;
 import net.exotia.plugins.drop.handler.HandlerInvalid;
 import net.exotia.plugins.drop.handler.HandlerUnauthorized;
@@ -33,6 +30,7 @@ public final class DropPlugin extends JavaPlugin {
     private static BukkitAudiences audiences;
     private final Injector injector = OkaeriInjector.create();
     private final ConfigurationFactory configurationFactory = new ConfigurationFactory(this.getDataFolder());
+    private ConfigurationPlugin configurationPlugin;
     private ConfigurationMessage configurationMessage;
     private ConfigurationGui configurationGui;
     private ConfigurationDrop configurationDrop;
@@ -58,10 +56,12 @@ public final class DropPlugin extends JavaPlugin {
     }
 
     private void setupConfiguration() {
+        configurationPlugin = configurationFactory.produce(ConfigurationPlugin.class, "plugin.yml");
         configurationMessage = configurationFactory.produce(ConfigurationMessage.class, "messages.yml");
         configurationGui = configurationFactory.produce(ConfigurationGui.class, "guis.yml");
         configurationDrop = configurationFactory.produce(ConfigurationDrop.class, "drops.yml");
 
+        injector.registerInjectable(configurationPlugin);
         injector.registerInjectable(configurationMessage);
         injector.registerInjectable(configurationGui);
         injector.registerInjectable(configurationDrop);
@@ -92,6 +92,7 @@ public final class DropPlugin extends JavaPlugin {
     }
 
     private void cleanUp() {
+        configurationPlugin.save();
         configurationMessage.save();
         configurationGui.save();
         configurationDrop.save();
