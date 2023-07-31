@@ -26,7 +26,6 @@ public class CommandReload {
     public void reload(CommandSender sender) {
         try {
             configurationMessage.load(true);
-            configurationGui.load(true);
             configurationDrop.load(true);
             UtilMessage.sendMessage(sender, configurationMessage.getCommandsReload().getSuccess());
             if (sender instanceof Player player)
