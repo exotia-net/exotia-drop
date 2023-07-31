@@ -16,6 +16,8 @@ public class ListenerBlock implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
+        if (!configurationDrop.getWorlds().contains(event.getBlock().getWorld().getName())) return;
+        if (!event.getPlayer().hasPermission("exotia.drop")) return;
         String dropType = configurationDrop.getDropType(event.getBlock().getType());
         if (dropType == null) return;
         Drop drop = configurationDrop.getDrop(dropType);

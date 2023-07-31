@@ -12,6 +12,8 @@ import java.util.Random;
 
 @Getter
 public class ConfigurationDrop extends OkaeriConfig {
+    @Comment("List of drop-able worlds")
+    private List<String> worlds = List.of("world");
     @Comment("Multiplier for amount")
     private float multiplier = 1;
     @Comment("Drop-able block")
