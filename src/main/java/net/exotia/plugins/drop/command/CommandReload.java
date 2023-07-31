@@ -7,7 +7,6 @@ import eu.okaeri.configs.exception.OkaeriException;
 import eu.okaeri.injector.annotation.Inject;
 import net.exotia.plugins.drop.configuration.ConfigurationDrop;
 import net.exotia.plugins.drop.configuration.ConfigurationFactory;
-import net.exotia.plugins.drop.configuration.ConfigurationGui;
 import net.exotia.plugins.drop.configuration.ConfigurationMessage;
 import net.exotia.plugins.drop.utils.UtilMessage;
 import org.bukkit.command.CommandSender;
@@ -20,8 +19,6 @@ public class CommandReload {
     private ConfigurationFactory configurationFactory;
     @Inject
     private ConfigurationMessage configurationMessage;
-    @Inject
-    private ConfigurationGui configurationGui;
     @Inject
     private ConfigurationDrop configurationDrop;
 
@@ -39,7 +36,6 @@ public class CommandReload {
             if (sender instanceof Player player)
                 UtilMessage.playSound(player, configurationMessage.getSounds().getError());
             configurationMessage = configurationFactory.produce(ConfigurationMessage.class, "messages.yml");
-            configurationGui = configurationFactory.produce(ConfigurationGui.class, "guis.yml");
             configurationDrop = configurationFactory.produce(ConfigurationDrop.class, "drops.yml");
         }
     }
