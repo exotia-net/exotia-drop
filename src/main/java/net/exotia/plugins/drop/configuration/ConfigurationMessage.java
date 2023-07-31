@@ -68,7 +68,7 @@ public class ConfigurationMessage extends OkaeriConfig {
 
     @Getter
     public class EventsBreak extends OkaeriConfig {
-        private String dropItem = "鱂 Gratulacje! Znalazłeś <gradient:#4fa943:#9ec52f><bold>%value_1% x %value_2%!</bold></gradient>";
+        private String dropItem = "鱂 Gratulacje! Znalazłeś %value_1% x %value_2%!";
         private String dropLevel = "鱂 Gratulacje! Znalazłeś zaklętą <gradient:#4fa943:#9ec52f><bold>butelkę (+%value_1%)!</bold></gradient>";
         private String dropCommand = "鱂 Gratulacje! Znalazłeś <gradient:#4fa943:#9ec52f><bold>%value_1%!</bold></gradient>";
     }
