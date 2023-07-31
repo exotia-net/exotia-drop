@@ -13,7 +13,7 @@ public enum DropType {
         public void dropPlayer(Player player, Drop drop, ConfigurationMessage configurationMessage, float multiplier) {
             ItemStack item = UtilItem.getItem(drop, multiplier);
             player.getInventory().addItem(item);
-            if (drop.getChance() > 1) {
+            if (drop.getChance() < 1) {
                 UtilMessage.playSound(player, configurationMessage.getSounds().getSuccess());
                 return;
             }
@@ -26,7 +26,7 @@ public enum DropType {
         public void dropPlayer(Player player, Drop drop, ConfigurationMessage configurationMessage, float multiplier) {
             int level = (int) (drop.getDropAmount() * multiplier);
             player.setLevel(player.getLevel() + level);
-            if (drop.getChance() > 1) {
+            if (drop.getChance() < 1) {
                 UtilMessage.playSound(player, configurationMessage.getSounds().getSuccess());
                 return;
             }
@@ -41,7 +41,7 @@ public enum DropType {
                 Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), drop.getId().replace("%player_name%", player.getDisplayName()));
             else
                 Bukkit.getServer().dispatchCommand(player, drop.getId().replace("%value_1%", String.valueOf(drop.getDropAmount() * multiplier)));
-            if (drop.getChance() > 1) {
+            if (drop.getChance() < 1) {
                 UtilMessage.playSound(player, configurationMessage.getSounds().getSuccess());
                 return;
             }
