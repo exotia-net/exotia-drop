@@ -21,6 +21,7 @@ public class ListenerBlock implements Listener {
         String dropType = configurationDrop.getDropType(event.getBlock().getType());
         if (dropType == null) return;
         Drop drop = configurationDrop.getDrop(dropType);
+        if (drop == null) return;
         if (drop.canDrop()) return;
         drop.dropPlayer(event.getPlayer(), configurationMessage, configurationDrop.getMultiplier());
     }

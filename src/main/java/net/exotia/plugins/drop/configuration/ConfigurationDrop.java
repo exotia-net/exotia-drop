@@ -79,6 +79,7 @@ public class ConfigurationDrop extends OkaeriConfig {
 
     public Drop getDrop(String dropType) {
         List<Drop> dropList = drops.get(dropType);
+        if (dropList == null) return null;
         return dropList.get(new Random().nextInt(dropList.size()));
     }
 }
