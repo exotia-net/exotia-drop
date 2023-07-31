@@ -15,8 +15,8 @@ public class UtilItem {
         ItemMeta meta = item.getItemMeta();
         if (amount > 0) item.setAmount(amount);
         if (meta == null || displayName == null || lore == null) return item;
-        meta.setDisplayName(displayName);
-        meta.setLore(lore);
+        meta.setDisplayName(UtilMessage.convertComponent(displayName));
+        meta.setLore(UtilMessage.convertComponent(lore));
         item.setItemMeta(meta);
         return item;
     }

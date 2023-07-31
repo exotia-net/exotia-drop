@@ -29,6 +29,10 @@ public class ConfigurationDrop extends OkaeriConfig {
                         .id("crate_key_fragment_memory")
                         .itemType("oraxen")
                         .displayName("<gradient:#F4DF52:#E8AA2D><bold>Fragment Pamiętnego Klucza</bold></gradient>")
+                        .lore(List.of("<gray>Z kilku takich fragmentów",
+                                "<gray>możesz stworzyć klucz",
+                                "<gray>do <gradient:#F4DF52:#E8AA2D><bold>Pamiętnej Skrzyni!</bold></gradient>"
+                        ))
                         .amount(1)
                         .chance(0.25f)
                         .build())
