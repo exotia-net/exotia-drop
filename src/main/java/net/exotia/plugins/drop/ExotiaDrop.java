@@ -22,7 +22,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.stream.Stream;
 
-public final class DropPlugin extends JavaPlugin {
+public final class ExotiaDrop extends JavaPlugin {
     @Getter
     private static Plugin plugin;
     @Getter

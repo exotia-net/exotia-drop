@@ -1,6 +1,6 @@
 package net.exotia.plugins.drop.utils;
 
-import net.exotia.plugins.drop.DropPlugin;
+import net.exotia.plugins.drop.ExotiaDrop;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -18,7 +18,7 @@ public class UtilMessage {
     }
 
     public static void sendMessage(CommandSender sender, String message, String... values) {
-        DropPlugin.getAudiences().sender(sender).sendMessage(replacePlaceholders(message, values));
+        ExotiaDrop.getAudiences().sender(sender).sendMessage(replacePlaceholders(message, values));
     }
 
     public static String getMessage(String message) {
