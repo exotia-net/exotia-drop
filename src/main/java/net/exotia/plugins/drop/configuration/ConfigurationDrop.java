@@ -3,7 +3,7 @@ package net.exotia.plugins.drop.configuration;
 import eu.okaeri.configs.OkaeriConfig;
 import eu.okaeri.configs.annotation.Comment;
 import lombok.Getter;
-import net.exotia.plugins.drop.drop.rewards.Drop;
+import net.exotia.plugins.drop.drop.Drop;
 import org.bukkit.Material;
 
 import java.util.HashMap;

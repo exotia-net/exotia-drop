@@ -1,4 +1,4 @@
-package net.exotia.plugins.drop.drop.rewards;
+package net.exotia.plugins.drop.drop;
 
 import eu.okaeri.configs.OkaeriConfig;
 import lombok.Builder;

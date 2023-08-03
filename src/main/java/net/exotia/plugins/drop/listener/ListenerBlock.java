@@ -3,7 +3,7 @@ package net.exotia.plugins.drop.listener;
 import eu.okaeri.injector.annotation.Inject;
 import net.exotia.plugins.drop.configuration.ConfigurationDrop;
 import net.exotia.plugins.drop.configuration.ConfigurationMessage;
-import net.exotia.plugins.drop.drop.rewards.Drop;
+import net.exotia.plugins.drop.drop.Drop;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;

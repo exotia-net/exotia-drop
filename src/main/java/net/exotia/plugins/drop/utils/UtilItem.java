@@ -1,7 +1,7 @@
 package net.exotia.plugins.drop.utils;
 
 import io.th0rgal.oraxen.api.OraxenItems;
-import net.exotia.plugins.drop.drop.rewards.Drop;
+import net.exotia.plugins.drop.drop.Drop;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

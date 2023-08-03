@@ -1,4 +1,4 @@
-package net.exotia.plugins.drop.drop.rewards;
+package net.exotia.plugins.drop.drop;
 
 import net.exotia.plugins.drop.configuration.ConfigurationMessage;
 import net.exotia.plugins.drop.utils.UtilItem;
